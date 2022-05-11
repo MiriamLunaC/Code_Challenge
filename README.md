@@ -85,9 +85,42 @@ Se declararon 3 rutas (endpoints) con el método `GET`, una para cada método de
 | localhost:3000/v1/students/emailByHaveCertification | localhost:3000/v1/students/emailByHaveCertification | Regresa los correos electrónicos de los estudiantes que tienen certificación |
 | localhost:3000/v1/students/credits/:credits | localhost:3000/v1/students/credits/500 | Muestra los datos de los estudiantes que tienen más de 500 créditos |
 
-En el código se ve de la siguiente manera: 
+Para correr el API se necesita ejecutar el comando `npm run server`, el cuál se declaró en el `package.json` que al correr ese comando es como si corriera `node ./lib/server.js`. 
 
-![image](https://user-images.githubusercontent.com/99373164/167931098-75a1168f-d80c-42ec-bf39-b41c0483a67a.png)
+![image](https://user-images.githubusercontent.com/99373164/167935855-ec014974-127c-435a-bd4c-b8eab7bc4e41.png)
+
+Una vez levantado el `API`, vamos al navegador y accedemos a las rutas que se habilitaron en el `server` (pueden usar las rutas que se encuentran en la columna `Request` de la tabla anterior).
+
+
+| Código | Respuesta en el navegador |
+| ------- | -------- |
+| ![image](https://user-images.githubusercontent.com/99373164/167934520-5faeeaf2-e714-457e-9437-4ca4ae72c33e.png) | ![image](https://user-images.githubusercontent.com/99373164/167937280-80ef9df5-3eb2-4341-aa68-d9ea75c254db.png) |
+| ![image](https://user-images.githubusercontent.com/99373164/167936583-3b485af2-68ce-4a73-8357-0c59cf8832ad.png) | ![image](https://user-images.githubusercontent.com/99373164/167937504-1cd9370a-5eb0-4aee-a678-3b191ce9f6aa.png) |
+| ![image](https://user-images.githubusercontent.com/99373164/167936665-63225d9e-dade-42c4-8c56-07b1d218d12b.png) | ![image](https://user-images.githubusercontent.com/99373164/167937695-277eac6d-3f02-4b1a-88e9-d69812016ef8.png) |
 
 _______________________________________________________________________________________________________________
 
+Como todo sistema, se crearon test para validar que ni los métodos de `StudentsService` y `StudentsController` regresaran datos incorrectos.
+
+* Tests para la clase StudentsService (`./test/services/StudentsService.test.js`).
+
+  ![image](https://user-images.githubusercontent.com/99373164/167939286-c9230f47-910f-4fd3-9e23-592e369bd618.png)
+
+* Tests para la clase StudentsController (`./test/controllers/StudentsController.js`).
+
+  ![image](https://user-images.githubusercontent.com/99373164/167939611-80bc247c-e06d-4c43-859c-9847edfe1fb5.png)
+
+Para correr los test es necesario utilizar `jest`, en el `package.json` se agrega un script con la ruta de `jest` para que al ejecutar el comando `npm test` corran los test.
+
+![image](https://user-images.githubusercontent.com/99373164/167940722-3d9045d5-3f44-4b22-aacb-2712011e8aa1.png)
+
+![image](https://user-images.githubusercontent.com/99373164/167940810-8ab75041-07b8-4162-a1fc-d655a3cee3ed.png)
+
+__________________________________________________________________________________________________________________
+
+Así mismo, en el `package.json` se declaran scripts para hacer uso de ESLint y poder corregir el código del sistema que esté escrito con javascript.
+
+![image](https://user-images.githubusercontent.com/99373164/167941260-89f8e7d8-ff55-4493-ab62-5046e95d777d.png)
+
+El comando `npm run linter` nos muestra los errores que encontró en el código, `npm run linter-fix` corrige algunos de dichos problemas (como agregar ';' al final de las líneas).
+____________________________________________________________________________________________________________________
