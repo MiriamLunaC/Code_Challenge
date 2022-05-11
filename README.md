@@ -8,10 +8,11 @@
 | ESLint | npm install eslint --save-dev | Encuentra y resuelve los errores estéticos del código en javascript. |
 
 ### Para este proyecto se crearon los siguientes archivos:
-
+____________________________________________________________________________________________________________________
 `Reader.js` : archivo ubicado en `./lib/utils/Reader.js`, contiene un método llamado `readJsonFile`, el cuál, 
 su función es leer un archivo tipo json y regresar los datos encontrados, para ello se necesita de el módulo `fs`
 ya que permite acceder e interactuar con los archivos.
+____________________________________________________________________________________________________________________
 
 `StudentsService.js`: ubicado en `./lib/services/StudentsService.js`, este archivo contiene 3 métodos:
 
@@ -33,3 +34,30 @@ ya que permite acceder e interactuar con los archivos.
     esa condición.
     
     ![image](https://user-images.githubusercontent.com/99373164/167923169-3475dd08-168c-49ec-a8ad-89f5defd087d.png)
+    
+Para poder acceder a la clase `Read` es necesario "importarlo" en StudentsService.js de la siguiente manera (CommonJs):
+
+   > const Reader = require("../utils/Reader");
+__________________________________________________________________________________________________________________________
+
+
+
+`StudentsController.js`: ubicado en `./lib/controllers/StudentsController.js`, este archivo contiene 3 métodos:
+
+ * `getAllStudents` : Llama al método `getAllStudents` de la clase `StudentsService` y regresa la información obtenida.
+     
+     ![image](https://user-images.githubusercontent.com/99373164/167924232-bcfede6b-09af-4eb0-a1d0-df878988b54a.png)
+                      
+ * `getEmailByHaveCertification` : Llama al método `getEmailsByHaveCertification` de la clase `StudentsService` 
+    y regresa la información obtenida.
+    
+      ![image](https://user-images.githubusercontent.com/99373164/167924274-6fbc72f3-cd70-4ac7-a776-76686669ed63.png)
+ 
+ * `getStudentsByCredits`: Llama al método `getAllStudents` de la clase `StudentsService` y le manda como parámentro
+    su parámetro credits, finalmente regresa la información recibida.
+    
+    ![image](https://user-images.githubusercontent.com/99373164/167923169-3475dd08-168c-49ec-a8ad-89f5defd087d.png)
+    
+Para poder acceder a la clase `StudentsService` es necesario "importarlo" en StudentsController.js de la siguiente manera (CommonJs):
+
+   > const StudentsService = require("../services/StudentsService");
