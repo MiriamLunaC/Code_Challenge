@@ -8,6 +8,13 @@
 | ESLint | npm install eslint --save-dev | Encuentra y resuelve los errores estéticos del código en javascript. |
 
 ### Para este proyecto se crearon los siguientes archivos:
+
+```mermaid
+graph TD;
+    Reader-->StudentsService;
+    StudentsService-->StudentsController
+    StudentsController-->Server
+```
 ____________________________________________________________________________________________________________________
 `Reader.js` : archivo ubicado en `./lib/utils/Reader.js`, contiene un método llamado `readJsonFile`, el cuál, 
 su función es leer un archivo tipo json y regresar los datos encontrados, para ello se necesita de el módulo `fs`
