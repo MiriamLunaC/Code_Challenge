@@ -61,3 +61,33 @@ ________________________________________________________________________________
 Para poder acceder a la clase `StudentsService` es necesario "importarlo" en StudentsController.js de la siguiente manera (CommonJs):
 
    > const StudentsService = require("../services/StudentsService");
+
+______________________________________________________________________________
+
+`server.js`: ubicado en `./lib/server.js`, este es el archivo con el que se crea oficialmente el API, se necesita "importar" la clase `StudentsController`, también se importa el modulo `express`.
+
+![image](https://user-images.githubusercontent.com/99373164/167928191-166401da-5efb-4785-839e-3bd8bd15e693.png)
+
+Con express se pueden crear los `endpoints` que se necesiten sin importar el tipo (`GET`, `POST`, `PUT`, `DELETE`). Para este proyecto solo se utilizará el método `GET`.
+
+Guardamos la `App de Express` en la constante `app`, y guardamos en la constante `port` el puerto donde se va a correr el `API` (3000). 
+![image](https://user-images.githubusercontent.com/99373164/167929415-db2a9b05-d5b4-454c-be77-19b0625d26c9.png)
+
+Para que se pueda levantar el servicio, es necesario que la `App de Express` "escuche" el puerto, eso se hace de la siguiente manera.
+
+![image](https://user-images.githubusercontent.com/99373164/167929563-cdfefbcc-ea02-4b35-90aa-77c90a0434e8.png)
+
+Se declararon 3 rutas (endpoints) con el método `GET`, una para cada método de StudentsController.
+
+| Endpoint | Request | Response |
+| -------- | ------- | -------- |
+| localhost:3000/v1/students | localhost:3000/v1/students | Regresa la información de todos los estudiantes |
+| localhost:3000/v1/students/emailByHaveCertification | localhost:3000/v1/students/emailByHaveCertification | Regresa los correos electrónicos de los estudiantes que tienen certificación |
+| localhost:3000/v1/students/credits/:credits | localhost:3000/v1/students/credits/500 | Muestra los datos de los estudiantes que tienen más de 500 créditos |
+
+En el código se ve de la siguiente manera: 
+
+![image](https://user-images.githubusercontent.com/99373164/167931098-75a1168f-d80c-42ec-bf39-b41c0483a67a.png)
+
+_______________________________________________________________________________________________________________
+
