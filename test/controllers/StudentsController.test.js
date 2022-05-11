@@ -20,6 +20,6 @@ describe("Tests for StudentsController", ()=>{
         expect(students.length).not.toBe(undefined);
         expect(students.length).not.toBe(null);
         expect(students.length).toBeGreaterThan(0);
-        expect(students[0].credits).toBeGreaterThan(5000);
+        expect(students[0].credits).toBeGreaterThan(500);
     })
 });
